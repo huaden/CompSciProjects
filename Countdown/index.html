@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown_Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class = "title">
+            <h1>
+                Time Left At Work
+            </h1>
+            <div class="buttons">
+                <input id="endDate" type="date" placeholder="MM/DD/YYYY">
+                <button id="updateTimer" onclick="updateDay()">Update Timer?</button>
+                <h5>(Refresh to choose a new date)</h5>
+            </div>
+            
+        </div>
+
+        <div class="clock">
+            <div class = "order">
+                <h4 id = "days">
+                    ???
+                </h4>
+                <h2>
+                    Days
+                </h2>
+            </div>
+            <h3>
+                :
+            </h3>
+            <div class ="order">
+                <h4 id = "hours">
+                    ???
+                </h4>
+                <h2>
+                    Hours
+                </h2>
+            </div>
+            <h3>
+                :
+            </h3>
+            <div class ="order">
+                <h4 id = "min">
+                    ???
+                </h4>
+                <h2>
+                    Minutes
+                </h2>
+            </div>
+            <h3>
+                :
+            </h3>
+            <div class = "order">
+                <h4 id = "sec">
+                    ???
+                </h4>
+                <h2>
+                    Seconds
+                </h2>
+            </div>
+        </div>
+        
+
+
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

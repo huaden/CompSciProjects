@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .info_container{
+            background-color: rgb(173, 216, 230);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.2em;
+            padding-left: 10%;
+            border-radius: 10%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .info_container p{
+            margin-bottom: 1em;
+        }
+        
+        .container{
+            background-color: rgb(85, 85, 85);
+        }
+
+        .ingredients,
+        .allergens,
+        .generalInfo{
+            width:25%;
+            height: 100%;
+            display: inline;
+            margin-right: 1%;
+            justify-content: left;
+        }
+
+        .productName{
+            justify-content: left;
+            text-align: left;
+            font-size: larger;
+        }
+
+        .subcontainer{
+            display: flex;
+        }
+
+        .endButtons{
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+        }
+
+    </style>
+
+</head>
+
+
+
+
+<body style="background-color: rgb(85, 85, 85);">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <button class="btn btn-outline-success" type="button" onclick="window.location.href = '/index' ; ">Home Page</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" onclick="window.location.href = '/barcode_info' ; ">Scan Another Item</button>
+        </form>
+      </nav>
+    <div class="container">
+    {% if product %}
+        <h2 style="display: flex; justify-content: center; font-size: 2.2em;">Product Information:</h2>
+        {% if product.status_verbose != 'product found' %}
+            <p style="display: flex; 
+            justify-content: center; 
+            align-self: center; 
+            align-items: center; 
+            font-size: large;">
+            This product was not found</p>
+
+        {% else %}
+        <div class="info_container">
+            <div class="productName">
+                <p>Product Name: {{ product.name }}</p>
+            </div>
+            <div class="subcontainer">
+                <div class="ingredients">
+                    <p>Ingredients: {{ product.ingredients }}</p>
+                </div>
+                <div class="allergens">
+                    <p><span style="color: red;">Allergens:</span> {{ product.allergens }}</p>
+                </div>
+                <div class="generalInfo">
+                    <p>Serving Size: {{ product.serving_size }}</p>
+                    <p>Nutrients:</p>
+                    <p>Total Fat: {{ product.fat }}{{product.fat_unit}}</p>
+                    <p>Cholesterol: {{ product.cholesterol }}{{product.cholesterol_unit}}</p>
+                    <p>Sodium: {{ product.sodium * 1000 }}{{product.sodium_unit}}</p>
+                    <p>Total Carbohydrates: {{ product.carbohydrates }}{{product.carbohydrates_unit}}</p>
+                    <p>Total Sugars: {{ product.sugars }}{{product.sugars_unit}}</p>
+                    <p>Protein: {{ product.proteins }}{{product.proteins_unit}}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endif %}
+    <!--<p>{{ barcode }}</p>-->
+</div>
+</body>
+</html>
