@@ -21,6 +21,10 @@ h2{
     bottom: 14%;
 }
 
+h5{
+    font-size: medium;
+}
+
 .container{
     display: flex;
     flex-direction: column;

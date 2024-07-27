@@ -1,28 +1,39 @@
+
+var timerFunc = null;
+
+
+
+
 function updateDay(){
-const now = new Date();
-var month = now.getMonth();
-var today = now.getDate();
-var hour = now.getHours();
 
-var el = document.getElementById("endDate");
-var endDate = el.valueAsDate;
-if(endDate === null){
-    endDate = new Date('2024-08-17T00:00');
-}
-else{
-    endDate.setTime(endDate.getTime() + 4 * 60 * 60 * 1000);
-}
+    changeButtonEnd();
+    const now = new Date();
+    var month = now.getMonth();
+    var today = now.getDate();
+    var hour = now.getHours();
 
-var dif = (endDate-now)/1000;
-var difDays = Math.trunc(dif/60/60/24);
-dif -= difDays*60*60*24;
-var difHours = Math.trunc(dif/60/60);
-dif -= difHours*60*60;
-var difMin = Math.trunc(dif/60);
-dif -= difMin*60;
-var difSec = Math.trunc(dif);
+    var el = document.getElementById("endDate");
+    var endDate = el.valueAsDate;
+    if(endDate === null){
+        endDate = new Date('2024-08-17T00:00');
+    }
+    else{
+        endDate.setTime(endDate.getTime() + 4 * 60 * 60 * 1000);
+    }
 
-var timerFunc = setInterval(function() {
+    document.getElementById("dateInfo").innerHTML = "Countdown until: " + endDate.toLocaleDateString();
+
+    var dif = (endDate-now)/1000;
+    var difDays = Math.trunc(dif/60/60/24);
+    dif -= difDays*60*60*24;
+    var difHours = Math.trunc(dif/60/60);
+    dif -= difHours*60*60;
+    var difMin = Math.trunc(dif/60);
+    dif -= difMin*60;
+    var difSec = Math.trunc(dif);
+
+
+    timerFunc = setInterval(function() {
     if(difSec < 0){
         difMin -= 1;
         difSec = 59;
@@ -50,4 +61,9 @@ var timerFunc = setInterval(function() {
  }, 1000);
 
 
+}
+
+function changeButtonEnd(){
+    document.getElementById("updateTimer").innerHTML = "New Date?";
+    clearInterval(timerFunc);
 }
