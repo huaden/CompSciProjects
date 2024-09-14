@@ -15,7 +15,7 @@ function updateDay(){
     var el = document.getElementById("endDate");
     var endDate = el.valueAsDate;
     if(endDate === null){
-        endDate = new Date('2024-08-17T00:00');
+        endDate = new Date('2024-08-15T00:00');
     }
     else{
         endDate.setTime(endDate.getTime() + 4 * 60 * 60 * 1000);
