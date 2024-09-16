@@ -1,6 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import pyautogui
 
@@ -20,8 +24,8 @@ driver.get("https://lichess.org/")
 driver.maximize_window()
 
 
-username = "penguins47"
-password = "BotAccount_v1"
+username = os.getenv("username")
+password = os.getenv("password")
 
 driver.find_element(By.XPATH, '/html[1]/body[1]/header[1]/div[2]/a[1]').click()
 time.sleep(2)
