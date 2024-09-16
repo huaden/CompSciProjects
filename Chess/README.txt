@@ -5,4 +5,5 @@ In order to run ur own version:
 3) map where the pixels line up on the chess board and adjust the values according in the connecting.py
 4) Adjust the algorithmn to your liking
 
-5) Have fun playing!!!!
+
+5) Have fun playing!!!! (Run connecting.py it is the main program)
