@@ -101,7 +101,7 @@ def bestMove():
     global avalMoves, spotVal
     bestScore = -10000
     move = [-1,1]
-empAvalMove = avalMoves
+    tempAvalMove = avalMoves
     for i in range(0,len(tempAvalMove)):
         row = tempAvalMove[i][0]
         col = tempAvalMove[i][1]

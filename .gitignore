@@ -1,0 +1,22 @@
+/Chess/.env
+/Chess/venv
+/Chess/.idea
+# Default ignored files
+/Chess/.idea/shelf/
+/Chess/.idea/workspace.xml
+# Editor-based HTTP Client requests
+/Chess/.idea/httpRequests/
+# Datasource local storage ignored files
+/Chess/.idea/dataSources/
+/Chess/.idea/dataSources.local.xml
+
+
+/Barcode_website/venv
+/Barcode_website/__pycache__
+
+
+/Hangman/.idea
+/Hangman/venv
+
+TicTacToe/.idea
+TicTacToe/venv
