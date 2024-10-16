@@ -11,8 +11,8 @@
 /Chess/.idea/dataSources.local.xml
 
 
-/Barcode_website/venv
-/Barcode_website/__pycache__
+/Barcode_website/venv/Barcode_website/__pycache__
+Barcode_website/venv
 
 
 /Hangman/.idea
